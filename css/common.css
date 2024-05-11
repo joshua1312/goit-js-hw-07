@@ -14,15 +14,20 @@ body {
 }
 
 ul {
-  list-style: none;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 }
 
-ul #categories {
-  display: inline;
+#categories {
   width: 392px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
 }
 
-li {
+.item li {
   width: 360px;
-  border: 1px solid rgba(128, 128, 128, 1)
+  border: 1px solid rgba(128, 128, 128, 1);
+  margin-bottom: 8px;
 }
