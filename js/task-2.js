@@ -1,3 +1,4 @@
+
 const images = [
   {
     url: "https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?dpr=2&h=750&w=1260",
@@ -24,3 +25,13 @@ const images = [
     alt: "Lighthouse Coast Sea",
   }
 ];
+
+let markup = "";
+const gallery = document.querySelector(".gallery");
+
+for (let index = 0; index < 3; index++) {
+  markup += `<li class="list-item">
+  <img class="image" src="${images[index].url}" alt="${images[index].alt}" width="360" height="300"/></li>`
+}
+
+gallery.insertAdjacentHTML("afterbegin", markup);
