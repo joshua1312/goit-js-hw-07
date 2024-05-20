@@ -16,13 +16,19 @@ createBtn.addEventListener("click", (event) => {
 );
 destroyBtn.addEventListener("click", (event) => { destroyBoxes() });
 
-function createBoxes(amount) {
+function createBoxes(quantity) {
   destroyBoxes();
-  let markup = "";
-  for (let index = 0; index < amount; index++) {
-    markup += `<div class="div-item"></div>`;
+  const markup = [];
+  for (let index = 0; index < quantity; index++) {
+    const square = document.createElement('div');
+    const AxB = 30 + index * 10;
+    square.style.height = `${AxB}px`;
+    square.style.backgroundColor = getRandomHexColor();
+    square.style.width = `${AxB}px`;
+    markup.push(square);
   }
-  divTags.insertAdjacentHTML("afterbegin", markup);
+  divTags.append(...markup);
+  inputField.value = "";
 }
 
 function destroyBoxes() {
